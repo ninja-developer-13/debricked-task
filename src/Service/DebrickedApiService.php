@@ -69,6 +69,7 @@ class DebrickedApiService
      */
     private function getJwtToken(): string
     {
+        //If all these conditions are met, the method returns $this->jwtToken, reusing the existing token instead of requesting a new one.
         if ($this->jwtToken && $this->tokenExpiration && $this->tokenExpiration > new \DateTime()) {
             return $this->jwtToken;
         }
@@ -93,6 +94,7 @@ class DebrickedApiService
 
             $data = $response->toArray();
             $this->jwtToken = $data['token'] ?? '';
+            //This method helps manage token expiration, preventing unauthorized access attempts with expired tokens.
             $this->tokenExpiration = (new \DateTime())->add(new \DateInterval('PT1H'));
             return $this->jwtToken;
         } catch (ClientExceptionInterface $e) {

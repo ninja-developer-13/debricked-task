@@ -42,7 +42,6 @@ class UploadController extends AbstractController
      */
     public function upload(Request $request): JsonResponse
     {
-        /** @var UploadedFile[] $files Array of uploaded files */
         $files = $request->files->get('fileData');
         if (empty($files)) {
             return new JsonResponse(['error' => 'No files uploaded'], 400);

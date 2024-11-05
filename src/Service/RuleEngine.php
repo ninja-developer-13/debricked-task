@@ -18,8 +18,8 @@ class RuleEngine
     /**
      * Sends an email notification to the recipient.
      *
-     * @param string $recipient The email address to send the notification.
-     * @param string $content The content of the email notification.
+     * @param string $scanResult The content of the email notification.
+     * @param string $userEmail The email address to send the notification.
      */
     public function sendEmail(string $scanResult, string $userEmail): void
     {
