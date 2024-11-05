@@ -7,12 +7,17 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="dependency_file_upload")
  */
+/**
+ *  Doctrine annotations like @ORM\Entity and @ORM\Table(name="dependency_file_upload") 
+ *  indicate that this class is an entity mapped to a database table named dependency_file_upload.
+ */
 class DependencyFileUpload
 {
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * The $id property is an auto-incrementing primary key.
      */
     private $id; // Primary key
 
